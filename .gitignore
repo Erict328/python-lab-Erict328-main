@@ -1,0 +1,39 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.env/
+.venv/
+
+# Editor/project settings
+.idea/
+*.swp
+
+# Pytest
+.cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Flask run files
+instance/
+*.db
+*.sqlite3
+
+# Build
+build/
+dist/
+*.egg-info/
+
+# MacOS
+.DS_Store
+
+# Logs
+*.log
+
+# Pre-commit
+.pre-commit-config.yaml
+.pre-commit/
