@@ -26,6 +26,14 @@ def calculate_student_average(students: StudentDict, student_name: str):
    :param student_name: The name of the student to find
    :returns: The average of the student's exam grades, or 0 if not applicable
    """
+
+   exams = students.get(student_name)
+   if exams is None or len(exams) ==0:
+      return 0
+   total = sum(exam["grade"]for exam in exams)
+   return total / len(exams)
+
+
    return 0
 
 # Problem 2: Find the lowest and highest grades
