@@ -50,7 +50,12 @@ def lowest_highest_grade(students: StudentDict):
    :param students: A dictionary with students' names as keys, and a list of exams as values
    :returns: A tuple containing the lowest and highest test scores, in that order
    """
-   return (-10, -5)
+   grades = [exam["grade"] for exams in students.values() for exam in exams]
+   if not grades:
+      return (0, 0)
+   return (min(grades), max(grades))
+   
+   #return (-10, -5)
 
 # Problem 3: Find teacher requests
 # 
