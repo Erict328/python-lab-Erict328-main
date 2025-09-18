@@ -71,7 +71,12 @@ def print_feedback(students: StudentDict):
 
    :param students: A dictionary with students' names as keys, and a list of exams as values
    """
-   pass
+   for student_name, exams in students.items():
+      for exam in exams:
+         if "Needs" in exam["comments"]:
+            print(f"[{student_name}] {exam['name']} ({exam['grade']}%):{exam['comments']}")
+
+   #pass
 
 # Problem 4: Average across students
 #
@@ -84,7 +89,13 @@ def exam_average(students: StudentDict, exam_name: str):
    :param exam_name: The name of the exam to average the scores from
    :returns: The average score for the exam across all students
    """
-   return 0
+   grades = [exam["grade"]
+             for exams in students.values()
+             for exam in exams
+             if exam["name"]==exam_name]
+   return (sum(grades) / len(grades)) if grades else 0
+
+   #return 0
 
 # Bonus: Report Card
 #
